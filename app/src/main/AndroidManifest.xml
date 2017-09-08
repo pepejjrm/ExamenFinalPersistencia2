@@ -21,6 +21,13 @@
         </activity>
 
         <activity
+            android:name=".MainActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+
+        <activity
             android:name=".ConfiguracionActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>

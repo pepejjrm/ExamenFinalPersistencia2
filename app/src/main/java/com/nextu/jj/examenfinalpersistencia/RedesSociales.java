@@ -37,7 +37,7 @@ public class RedesSociales extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        MainActivity activity = (MainActivity) getActivity();
+        MainActivity2 activity = (MainActivity2) getActivity();
         activity.updateView(getString(R.string.redes_sociales));
 }
 }
