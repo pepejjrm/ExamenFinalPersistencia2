@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Examen Final Interfaces</string>
+
+    <string name="nav_drawer_open">Abrir cajón</string>
+    <string name="nav_drawer_close">Cerrar cajón</string>
+    <string name="seccion1">Inicio</string>
+    <string name="seccion2">Facebook</string>
+    <string name="seccion3">Instagram</string>
+    <string name="seccion4">Google Plus</string>
+    <string name="seccion5">Twiter</string>
+    <string name="redes_sociales">Mis Redes Sociales</string>
+
+    <string name="noticias">Noticias</string>
+    <string name="grupos">Grupos</string>
+    <string name="web">Publicar</string>
+
+    <string name="buscar">Buscar</string>
+    <string name="fotos">Galeria</string>
+    <string name="me_gusta">Notificaciones</string>
+
+    <string name="colecciones">Colecciones</string>
+    <string name="comunidades">Comunidades</string>
+    <string name="notificaciones">Notificaciones</string>
+
+    <string name="chat">Chat</string>
+
+    <string name="version_web">Versión Web</string>
+    <string name="compartir">Compartir</string>
+    <string name="configuracion">Configuración</string>
+
+    <string name="nombre_de_usuario">nombre_usuario</string>
+
+    <string-array name="facebook_titulo">
+        <item>@string/noticias</item>
+        <item>@string/grupos</item>
+        <item>@string/web</item>
+    </string-array>
+
+    <string-array name="instagram_titulo">
+        <item>@string/buscar</item>
+        <item>@string/fotos</item>
+        <item>@string/me_gusta</item>
+    </string-array>
+
+    <string-array name="google_plus_titulo">
+        <item>@string/colecciones</item>
+        <item>@string/comunidades</item>
+        <item>@string/notificaciones</item>
+    </string-array>
+
+    <string-array name="twiter_titulo">
+        <item>@string/notificaciones</item>
+        <item>@string/chat</item>
+        <item>@string/buscar</item>
+    </string-array>
+
+    <string name="url_facebook">http://facebook.com</string>
+    <string name="url_instagram">https://instagram.com</string>
+    <string name="url_google_plus">https://plus.google.com</string>
+    <string name="url_twiter">https://twitter.com/?lang=es</string>
+
+    <string name="incio">Inicio</string>
+
+
+    <string name="text_bienvenida">Bienvenid@</string>
+    <string name="text_default_username">Usuario JOGAV</string>
+    <string name="text_bienvenida_a">Bienvenido a la app de JOGAV</string>
+    <string name="text_inicio_sesion">Inicia sesión para empezar</string>
+    <string name="text_descripcion_pantalla_inicio">Has iniciado sesión en una red social desarrollada por Next University</string>
+
+    <string name="hint_edit_username">Nombre de usuario</string>
+    <string name="hint_edit_password">Contraseña</string>
+
+    <string name="btn_text_login">Iniciar Sesión</string>
+    <string name="btn_text_logout">Cerrar Sesión</string>
+
+    <string name="text_error_username">El nombre de usuario es requerido</string>
+    <string name="text_error_password">La contraseña no puede ser vacía</string>
+    <string name="recordar">Recordarme</string>
+    <string name="estadisticas">Estadisticas</string>
+    <string name="resultados">Resultados</string>
+    <string name="rol_juego">Rol de juego</string>
+    <string name="equipos">Equipos</string>
+    <string name="acerca_de">Acerda de</string>
+    <string name="fotos_videos">Fotos y videos</string>
+
+</resources>
