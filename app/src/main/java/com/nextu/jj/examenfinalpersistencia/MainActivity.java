@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getWindow().setNavigationBarColor((getResources().getColor(R.color.colorPrimary)));
+
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.container1, new Login())
                 .commit();

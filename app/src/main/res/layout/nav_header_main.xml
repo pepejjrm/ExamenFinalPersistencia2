@@ -18,6 +18,15 @@
         android:padding="12dp"
         android:gravity="bottom">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="left"
+            android:paddingBottom="20dp"
+            android:src="@drawable/user_login" />
+
         <TextView
             android:id="@+id/text_nombre"
             android:text="@string/nombre_de_usuario"

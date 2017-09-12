@@ -41,8 +41,7 @@ public class MainActivity2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2);
 
-        String nombreUsuario = "";
-        String mailUsuario = "";
+        getWindow().setNavigationBarColor((getResources().getColor(R.color.colorPrimary)));
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -52,28 +51,9 @@ public class MainActivity2 extends AppCompatActivity
 
         actualizaDatosHeader(getIntent().getExtras());
 
-      /*  Bundle bundle = getIntent().getExtras();
-
-        nombreUsuario = bundle.get("nombreUsuario").toString();
-        mailUsuario = bundle.getString("mailUsuario").toString();
-
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        View header=navigationView.getHeaderView(0);
-
-        TextView nombreText = (TextView)header.findViewById(R.id.text_nombre);
-        TextView mailText = (TextView)header.findViewById(R.id.text_email);
-
-        nombreText.setText("test");
-        mailText.setText("test");*/
-
-
-
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null)
             navigationView.setNavigationItemSelectedListener(this);
-
 
     }
 
