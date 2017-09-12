@@ -1,14 +1,26 @@
 package com.nextu.jj.examenfinalpersistencia.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by JJ on 9/7/2017.
  */
 
-public class Usuario {
+public class Usuario implements Serializable {
+
+    public Usuario(String nombre, String pwd, boolean recordar) {
+        this.nombre = nombre;
+        this.pwd = pwd;
+        this.recordar = recordar;
+        this.mail = nombre+"@correo.mail.com";
+    }
+
+    public  Usuario(){
+    }
 
     private String nombre;
     private String pwd;
-    private String recordar;
+    private boolean recordar;
     private String mail;
 
     public String getNombre() {
@@ -27,11 +39,11 @@ public class Usuario {
         this.pwd = pwd;
     }
 
-    public String getRecordar() {
+    public boolean getRecordar() {
         return recordar;
     }
 
-    public void setRecordar(String recordar) {
+    public void setRecordar(boolean recordar) {
         this.recordar = recordar;
     }
 

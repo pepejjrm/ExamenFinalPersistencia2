@@ -1,5 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="cpackage com.nextu.jj.examenfinalinterfaces.MainActivity">
+    tools:context="package com.nextu.jj.examenfinalpersistencia.MainActivity2">
 </menu>

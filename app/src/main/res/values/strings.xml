@@ -1,13 +1,15 @@
 <resources>
-    <string name="app_name">Examen Final Interfaces</string>
+    <string name="app_name">Examen Final Persistencia</string>
 
     <string name="nav_drawer_open">Abrir cajón</string>
     <string name="nav_drawer_close">Cerrar cajón</string>
     <string name="seccion1">Inicio</string>
-    <string name="seccion2">Facebook</string>
-    <string name="seccion3">Instagram</string>
-    <string name="seccion4">Google Plus</string>
-    <string name="seccion5">Twiter</string>
+    <string name="seccion2">Equipos</string>
+    <string name="seccion3">Estadisticas</string>
+    <string name="seccion4">Resultados</string>
+    <string name="seccion5">Roles</string>
+    <string name="seccion6">Informes</string>
+    <string name="seccion7">Sesión</string>
     <string name="redes_sociales">Mis Redes Sociales</string>
 
     <string name="noticias">Noticias</string>
@@ -62,26 +64,16 @@
     <string name="incio">Inicio</string>
 
 
-    <string name="text_bienvenida">Bienvenid@</string>
-    <string name="text_default_username">Usuario JOGAV</string>
     <string name="text_bienvenida_a">Bienvenido a la app de JOGAV</string>
     <string name="text_inicio_sesion">Inicia sesión para empezar</string>
-    <string name="text_descripcion_pantalla_inicio">Has iniciado sesión en una red social desarrollada por Next University</string>
 
     <string name="hint_edit_username">Nombre de usuario</string>
     <string name="hint_edit_password">Contraseña</string>
 
     <string name="btn_text_login">Iniciar Sesión</string>
-    <string name="btn_text_logout">Cerrar Sesión</string>
 
     <string name="text_error_username">El nombre de usuario es requerido</string>
     <string name="text_error_password">La contraseña no puede ser vacía</string>
     <string name="recordar">Recordarme</string>
-    <string name="estadisticas">Estadisticas</string>
-    <string name="resultados">Resultados</string>
-    <string name="rol_juego">Rol de juego</string>
-    <string name="equipos">Equipos</string>
-    <string name="acerca_de">Acerda de</string>
-    <string name="fotos_videos">Fotos y videos</string>
 
 </resources>

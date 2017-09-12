@@ -6,27 +6,37 @@
 
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/home2"
+            android:icon="@drawable/home"
             android:title="@string/seccion1" />
 
         <item
-            android:id="@+id/nav_facebook"
-            android:icon="@drawable/facebook2"
+            android:id="@+id/nav_equipos"
+            android:icon="@drawable/teams"
             android:title="@string/seccion2" />
 
         <item
-            android:id="@+id/nav_instagram"
-            android:icon="@drawable/instagra2"
+            android:id="@+id/nav_estadisicas"
+            android:icon="@drawable/statics"
             android:title="@string/seccion3" />
 
         <item
-            android:id="@+id/nav_google_plus"
-            android:icon="@drawable/google_plus2"
+            android:id="@+id/nav_resultados"
+            android:icon="@drawable/scores"
             android:title="@string/seccion4" />
 
         <item
-            android:id="@+id/nav_twiter"
-            android:icon="@drawable/twitter2"
-            android:title="@string/seccion5" />
+        android:id="@+id/nav_roles"
+        android:icon="@drawable/schedule"
+        android:title="@string/seccion5" />
+
+        <item
+            android:id="@+id/nav_informes"
+            android:icon="@drawable/information"
+            android:title="@string/seccion6" />
+
+        <item
+            android:id="@+id/nav_sesion"
+            android:icon="@drawable/user"
+            android:title="@string/seccion7" />
     </group>
 </menu>

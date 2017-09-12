@@ -47,28 +47,28 @@ public class CambiaPropiedades {
         tabLayout = (TabLayout) activity.findViewById(R.id.tab_layout);
 
         switch(redSocial){
-            case R.id.nav_facebook:
+            case R.id.nav_equipos:
                 tab1 = R.drawable.noticias;
                 tab2 = R.drawable.group;
                 tab3 = R.drawable.earth;
                 imagen = R.array.facebook;
                 titulo = R.array.facebook_titulo;
                 break;
-            case R.id.nav_instagram:
+            case R.id.nav_estadisicas:
                 tab1 = R.drawable.search;
                 tab2 = R.drawable.camara;
                 tab3 = R.drawable.like;
                 imagen = R.array.instagram;
                 titulo = R.array.instagram_titulo;
                 break;
-            case R.id.nav_google_plus:
+            case R.id.nav_resultados:
                 tab1 = R.drawable.grid;
                 tab2 = R.drawable.grupo_g;
                 tab3 = R.drawable.campana;
                 imagen = R.array.google_plus;
                 titulo = R.array.google_plus_titulo;
                 break;
-            case R.id.nav_twiter:
+            case R.id.nav_roles:
                 tab1 = R.drawable.campana;
                 tab2 = R.drawable.mensaje;
                 tab3 = R.drawable.search;

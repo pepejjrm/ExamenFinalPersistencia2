@@ -12,13 +12,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity
@@ -41,17 +41,57 @@ public class MainActivity2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2);
 
+        String nombreUsuario = "";
+        String mailUsuario = "";
+
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.container, new Inicio())
                 .commit();
 
+        actualizaDatosHeader(getIntent().getExtras());
+
+      /*  Bundle bundle = getIntent().getExtras();
+
+        nombreUsuario = bundle.get("nombreUsuario").toString();
+        mailUsuario = bundle.getString("mailUsuario").toString();
+
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        View header=navigationView.getHeaderView(0);
+
+        TextView nombreText = (TextView)header.findViewById(R.id.text_nombre);
+        TextView mailText = (TextView)header.findViewById(R.id.text_email);
+
+        nombreText.setText("test");
+        mailText.setText("test");*/
+
+
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null)
             navigationView.setNavigationItemSelectedListener(this);
 
+
+    }
+
+    public void actualizaDatosHeader(Bundle bundle){
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        View header=navigationView.getHeaderView(0);
+
+        TextView nombreText = (TextView)header.findViewById(R.id.text_nombre);
+        TextView mailText = (TextView)header.findViewById(R.id.text_email);
+
+
+       String nombreUsuario = bundle.get("nombreUsuario").toString();
+       String  mailUsuario = bundle.getString("mailUsuario").toString();
+
+        nombreText.setText(nombreUsuario);
+        mailText.setText(mailUsuario);
     }
 
     public void onClickLogin(View v){
@@ -104,26 +144,26 @@ public class MainActivity2 extends AppCompatActivity
                 fragment = new Inicio();
                 break;
 
-            case R.id.nav_facebook:
+            case R.id.nav_equipos:
                 titulo = getString(R.string.seccion2);
                 colorPrimary = ContextCompat.getColor(this, R.color.colorPrimaryFacebook);
                 colorPrimaryDark = ContextCompat.getColor(this, R.color.colorPrimaryDarkFacebook);
                 fragment = new RedesSociales();
                 break;
 
-            case R.id.nav_instagram:
+            case R.id.nav_estadisicas:
                 titulo = getString(R.string.seccion3);
                 colorPrimary = ContextCompat.getColor(this, R.color.colorPrimaryInstagram);
                 colorPrimaryDark = ContextCompat.getColor(this, R.color.colorPrimaryDarkInstagram);
                 fragment = new RedesSociales();
                 break;
-            case R.id.nav_google_plus:
+            case R.id.nav_resultados:
                 titulo = getString(R.string.seccion4);
                 colorPrimary = ContextCompat.getColor(this, R.color.colorPrimaryGooglePlus);
                 colorPrimaryDark = ContextCompat.getColor(this, R.color.colorPrimaryDarkGooglePlus);
                 fragment = new RedesSociales();
                 break;
-            case R.id.nav_twiter:
+            case R.id.nav_roles:
                 titulo = getString(R.string.seccion5);
                 colorPrimary = ContextCompat.getColor(this, R.color.colorPrimaryTwiter);
                 colorPrimaryDark = ContextCompat.getColor(this, R.color.colorPrimaryDarkTwiter);
@@ -163,10 +203,12 @@ public class MainActivity2 extends AppCompatActivity
         SubMenu compartir = menu.addSubMenu(1,2,2,R.string.compartir);
         SubMenu configuracion = menu.addSubMenu(2,3,3,R.string.configuracion);
 
-        version_web.add(0,4,1,R.string.seccion2).setIcon(R.drawable.facebook2);
-        version_web.add(0,5,2,R.string.seccion3).setIcon(R.drawable.instagra2);
-        version_web.add(0,6,3,R.string.seccion4).setIcon(R.drawable.google_plus2);
-        version_web.add(0,7,4,R.string.seccion5).setIcon(R.drawable.twitter2);
+        version_web.add(0,4,1,R.string.seccion2).setIcon(R.drawable.teams);
+        version_web.add(0,5,2,R.string.seccion3).setIcon(R.drawable.statics);
+        version_web.add(0,6,3,R.string.seccion4).setIcon(R.drawable.scores);
+        version_web.add(0,7,4,R.string.seccion5).setIcon(R.drawable.schedule);
+        version_web.add(0,8,5,R.string.seccion6).setIcon(R.drawable.information);
+        version_web.add(0,9,6,R.string.seccion7).setIcon(R.drawable.user);
 
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
@@ -226,4 +268,5 @@ public class MainActivity2 extends AppCompatActivity
             customTabsIntent.launchUrl(this, Uri.parse(url));
         }
     }
+
 }
