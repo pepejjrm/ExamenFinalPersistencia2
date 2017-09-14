@@ -1,5 +1,7 @@
 package com.nextu.jj.examenfinalpersistencia.bean;
 
+import android.util.Log;
+
 import java.io.Serializable;
 
 /**
@@ -13,6 +15,7 @@ public class Usuario implements Serializable {
         this.pwd = pwd;
         this.recordar = recordar;
         this.mail = nombre+"@correo.mail.com";
+        Log.i("JJRM2",this.recordar + "");
     }
 
     public  Usuario(){

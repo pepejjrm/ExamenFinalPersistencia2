@@ -30,31 +30,4 @@ public class Login extends Fragment {
         return view;
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        if(gestionArchivo.validaArchivo(getActivity())){
-
-            Usuario usuario =  recuperaDatos();
-
-            if(usuario.getRecordar()){
-                Intent intent = new Intent(getActivity(), MainActivity2.class);
-                intent.putExtra("nombreUsuario",usuario.getNombre());
-                intent.putExtra("mailUsuario",usuario.getMail());
-                startActivity(intent);
-            }
-        }
-    }
-
-
-    private Usuario recuperaDatos(){
-        Usuario usuario = gestionArchivo.cargarArchivo(getActivity());
-
-        TextInputLayout editUsername = (TextInputLayout) getActivity().findViewById(R.id.edit_username);
-        //Log.i("TesJJRM",usuario.getNombre());
-        //editUsername.getEditText().setText(usuario.getNombre());
-        return usuario;
-    }
-
 }

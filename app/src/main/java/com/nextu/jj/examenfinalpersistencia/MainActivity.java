@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -22,13 +23,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        boolean login = false;
 
         getWindow().setNavigationBarColor((getResources().getColor(R.color.colorPrimary)));
 
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.container1, new Login())
-                .commit();
+        if(gestionArchivo.validaArchivo(this)) {
+            Usuario usuario =  recuperaDatos();
+            Log.i("JJRM4",usuario.getRecordar() + "");
+            if(usuario.getRecordar()){
+                login = true;
+                Intent intent = new Intent(this, MainActivity2.class);
+                startActivity(intent);
+            }
+        }
 
+        if (!login){
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container1, new Login())
+                    .commit();
+        }
+    }
+
+    private Usuario recuperaDatos(){
+        Usuario usuario = gestionArchivo.cargarArchivo(this);
+        return usuario;
     }
 
     public void onClickLogin(View v){
@@ -62,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         if(login){
 
             recordar = (CheckBox) findViewById(R.id.switch_opcion1);
+            Log.i("JJRM1",recordar.isChecked() + "");
             Usuario usuario = new Usuario(editTextUsername.getText().toString(),editTextPassword.getText().toString(),recordar.isChecked());
             gestionArchivo.guradaArchivo(this, usuario);
 

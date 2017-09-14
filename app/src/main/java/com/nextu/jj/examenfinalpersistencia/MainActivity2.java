@@ -20,6 +20,9 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.nextu.jj.examenfinalpersistencia.bean.Usuario;
 
 public class MainActivity2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,7 +52,7 @@ public class MainActivity2 extends AppCompatActivity
                 .add(R.id.container, new Inicio())
                 .commit();
 
-        actualizaDatosHeader(getIntent().getExtras());
+        actualizaDatosHeader();
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null)
@@ -57,21 +60,31 @@ public class MainActivity2 extends AppCompatActivity
 
     }
 
-    public void actualizaDatosHeader(Bundle bundle){
+   public void actualizaDatosHeader(){
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        View header=navigationView.getHeaderView(0);
+        GestionArchivo gestionArchivo = new GestionArchivo();
+        Usuario usuario = new Usuario();
 
-        TextView nombreText = (TextView)header.findViewById(R.id.text_nombre);
-        TextView mailText = (TextView)header.findViewById(R.id.text_email);
+        usuario = gestionArchivo.cargarArchivo(this);
 
+       //if(usuario.getRecordar())
+       //{
 
-       String nombreUsuario = bundle.get("nombreUsuario").toString();
-       String  mailUsuario = bundle.getString("mailUsuario").toString();
+           NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+           navigationView.setNavigationItemSelectedListener(this);
+           View header=navigationView.getHeaderView(0);
 
-        nombreText.setText(nombreUsuario);
-        mailText.setText(mailUsuario);
+           TextView nombreText = (TextView)header.findViewById(R.id.text_nombre);
+           TextView mailText = (TextView)header.findViewById(R.id.text_email);
+
+           String nombreUsuario = usuario.getNombre();
+           String mailUsuario = usuario.getMail();
+
+           nombreText.setText(nombreUsuario);
+           mailText.setText(mailUsuario);
+       //}
+
+       Toast.makeText(this, "Sesión iniciada con " + nombreUsuario, Toast.LENGTH_SHORT).show();
     }
 
     public void onClickLogin(View v){

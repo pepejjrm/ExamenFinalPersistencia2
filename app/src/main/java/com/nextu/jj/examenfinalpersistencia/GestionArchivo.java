@@ -29,7 +29,7 @@ public class GestionArchivo {
 
         try{
             if ((activity.openFileInput(archivo)) != null){
-                cargarArchivo(activity);
+                //cargarArchivo(activity);
                 correcto = true;
             }
         }catch (IOException e){
@@ -47,11 +47,11 @@ public class GestionArchivo {
             ObjectInputStream objInput = new ObjectInputStream(activity.openFileInput(archivo));
 
             usuario = (Usuario) objInput.readObject();
-
+            Log.i("JJRM3",usuario.getRecordar() + "");
             objInput.close();
             //txtContenido.setText(persona.toString());
             //editUsername.getEditText().setText(usuario.getNombre());
-            Toast.makeText(activity, "Sesión iniciada con " + usuario.getNombre(), Toast.LENGTH_SHORT).show();
+
         }catch (IOException e){
             //editUsername.ge8xtEditText().setText("Error al cargar el archivo");
 
