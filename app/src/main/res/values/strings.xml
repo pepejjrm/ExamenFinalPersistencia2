@@ -75,5 +75,11 @@
     <string name="text_error_username">El nombre de usuario es requerido</string>
     <string name="text_error_password">La contraseña no puede ser vacía</string>
     <string name="recordar">Recordarme</string>
+    <string name="media">Media</string>
+    <string name="marcador">Marcador</string>
+    <string name="local">Local</string>
+    <string name="visitante">visitante</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="agregar">Agregar</string>
 
 </resources>

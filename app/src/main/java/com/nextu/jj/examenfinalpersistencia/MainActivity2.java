@@ -57,7 +57,11 @@ public class MainActivity2 extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         if (navigationView != null)
             navigationView.setNavigationItemSelectedListener(this);
+    }
 
+    public void onClickAgregar(View view) {
+        DialogoAgregarMarcador dialog = new DialogoAgregarMarcador();
+        dialog.show(getSupportFragmentManager(), DialogoAgregarMarcador.TAG);
     }
 
    public void actualizaDatosHeader(){
@@ -66,9 +70,6 @@ public class MainActivity2 extends AppCompatActivity
         Usuario usuario = new Usuario();
 
         usuario = gestionArchivo.cargarArchivo(this);
-
-       //if(usuario.getRecordar())
-       //{
 
            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
            navigationView.setNavigationItemSelectedListener(this);
@@ -82,12 +83,12 @@ public class MainActivity2 extends AppCompatActivity
 
            nombreText.setText(nombreUsuario);
            mailText.setText(mailUsuario);
-       //}
+
 
        Toast.makeText(this, "Sesión iniciada con " + nombreUsuario, Toast.LENGTH_SHORT).show();
     }
 
-    public void onClickLogin(View v){
+    public void onClickLogin(View v){  //}
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.container, new Inicio())
                 .commit();
@@ -184,10 +185,7 @@ public class MainActivity2 extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START))
-            drawerLayout.closeDrawer(GravityCompat.START);
-        else
-            super.onBackPressed();
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
