@@ -26,7 +26,7 @@ public class RedesSociales extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-        viewPager.setAdapter(new BaseViewPagerAdapter(getActivity().getSupportFragmentManager(), getContext(), R.array.facebook, R.array.facebook_titulo));
+        viewPager.setAdapter(new BaseViewPagerAdapter(getActivity().getSupportFragmentManager(), getContext(), R.array.facebook, R.array.facebook_titulo, (MainActivity2)getActivity()));
 
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);

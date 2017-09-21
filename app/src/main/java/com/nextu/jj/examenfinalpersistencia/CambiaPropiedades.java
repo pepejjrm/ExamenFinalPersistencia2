@@ -82,7 +82,7 @@ public class CambiaPropiedades {
 
         ViewPager viewPager = (ViewPager) activity.findViewById(R.id.view_pager);
         if (viewPager != null)
-            viewPager.setAdapter(new BaseViewPagerAdapter(activity.getSupportFragmentManager(), activity.getApplicationContext(), imagen, titulo));
+            viewPager.setAdapter(new BaseViewPagerAdapter(activity.getSupportFragmentManager(), activity.getApplicationContext(), imagen, titulo, activity));
 
         if (tabLayout != null) {
             tabLayout.setupWithViewPager(viewPager);

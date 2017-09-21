@@ -9,13 +9,14 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.nextu.jj.examenfinalpersistencia.archivos.GestionArchivoSesion;
 import com.nextu.jj.examenfinalpersistencia.bean.Usuario;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextInputLayout editUsername;
     private TextInputLayout editPassword;
-    private GestionArchivo gestionArchivo = new GestionArchivo();
+    private GestionArchivoSesion gestionArchivoSesion = new GestionArchivoSesion();
     private CheckBox recordar;
 
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().setNavigationBarColor((getResources().getColor(R.color.colorPrimary)));
 
-        if(gestionArchivo.validaArchivo(this)) {
+        if(gestionArchivoSesion.validaArchivo(this)) {
             Usuario usuario =  recuperaDatos();
             Log.i("JJRM4",usuario.getRecordar() + "");
             if(usuario.getRecordar()){
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Usuario recuperaDatos(){
-        Usuario usuario = gestionArchivo.cargarArchivo(this);
+        Usuario usuario = gestionArchivoSesion.cargarArchivo(this);
         return usuario;
     }
 
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             recordar = (CheckBox) findViewById(R.id.switch_opcion1);
             Log.i("JJRM1",recordar.isChecked() + "");
             Usuario usuario = new Usuario(editTextUsername.getText().toString(),editTextPassword.getText().toString(),recordar.isChecked());
-            gestionArchivo.guradaArchivo(this, usuario);
+            gestionArchivoSesion.guradaArchivo(this, usuario);
 
             Intent intent = new Intent(this, MainActivity2.class);
             startActivity(intent);

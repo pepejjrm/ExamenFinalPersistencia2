@@ -15,7 +15,6 @@ public class Usuario implements Serializable {
         this.pwd = pwd;
         this.recordar = recordar;
         this.mail = nombre+"@correo.mail.com";
-        Log.i("JJRM2",this.recordar + "");
     }
 
     public  Usuario(){

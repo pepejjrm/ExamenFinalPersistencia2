@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="15dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/txt_titulo"
@@ -18,46 +20,17 @@
         android:id="@+id/contenedor1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txt_titulo">
+        android:layout_below="@id/txt_titulo"
+        android:orientation="horizontal">
 
 
         <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown" />
-
-        <EditText
             android:id="@+id/edit_local"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:hint="@string/local" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="VS"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/edit_visitante"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:hint="@string/visitante" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/contenedor2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/contenedor1">
+            android:textAlignment="center"
+            android:spinnerMode="dropdown" />
 
         <EditText
             android:id="@+id/edit_marcador1"
@@ -68,13 +41,40 @@
             android:hint="0"
             android:inputType="number"/>
 
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/contenedor3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contenedor1">
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="-"
+            android:text="VS"
+            android:textAlignment="center"
             android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/contenedor2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contenedor3"
+        android:layout_alignParentStart="true">
+
+        <Spinner
+            android:id="@+id/edit_visitante"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:spinnerMode="dropdown" />
 
         <EditText
             android:id="@+id/edit_marcador2"

@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nextu.jj.examenfinalpersistencia.archivos.GestionArchivoSesion;
 import com.nextu.jj.examenfinalpersistencia.bean.Usuario;
 
 public class MainActivity2 extends AppCompatActivity
@@ -60,16 +61,19 @@ public class MainActivity2 extends AppCompatActivity
     }
 
     public void onClickAgregar(View view) {
+
         DialogoAgregarMarcador dialog = new DialogoAgregarMarcador();
         dialog.show(getSupportFragmentManager(), DialogoAgregarMarcador.TAG);
+
     }
+
 
    public void actualizaDatosHeader(){
 
-        GestionArchivo gestionArchivo = new GestionArchivo();
+        GestionArchivoSesion gestionArchivoSesion = new GestionArchivoSesion();
         Usuario usuario = new Usuario();
 
-        usuario = gestionArchivo.cargarArchivo(this);
+        usuario = gestionArchivoSesion.cargarArchivo(this);
 
            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
            navigationView.setNavigationItemSelectedListener(this);

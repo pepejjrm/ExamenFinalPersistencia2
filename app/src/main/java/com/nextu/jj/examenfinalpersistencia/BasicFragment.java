@@ -3,6 +3,7 @@ package com.nextu.jj.examenfinalpersistencia;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +20,9 @@ public class BasicFragment extends Fragment {
 
     private static final String ARG_IMAGE = "imagen";
     private static final String ARG_TEXT = "texto";
+    private static AppCompatActivity ARG_ACTIVITY = new AppCompatActivity();
 
-    public static BasicFragment getInstance(int imagen, String titulo) {
+    public static BasicFragment getInstance(int imagen, String titulo, AppCompatActivity activity ) {
         BasicFragment fragment = new BasicFragment();
 
         Bundle bundle = new Bundle();
@@ -28,6 +30,8 @@ public class BasicFragment extends Fragment {
         bundle.putString(ARG_TEXT, titulo);
 
         fragment.setArguments(bundle);
+
+        ARG_ACTIVITY = activity;
         return fragment;
     }
 
