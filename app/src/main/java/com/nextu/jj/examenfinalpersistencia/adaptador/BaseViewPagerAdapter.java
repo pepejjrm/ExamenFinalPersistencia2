@@ -24,7 +24,7 @@ public class BaseViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-    return BasicFragment.getInstance(this.img.getResourceId(position, 0), titulo[position]);
+    return BasicFragment.getInstance(this.img.getResourceId(position, 0), titulo[position], this.activity);
     }
 
     @Override

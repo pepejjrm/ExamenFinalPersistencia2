@@ -25,13 +25,13 @@ import static android.content.Context.MODE_PRIVATE;
 public class GestionArchivoMarcadores {
 
     private Activity activity;
-    private static final String ARCHIVO_MARCADOR = "notas.txt";
+    private static final String ARCHIVO_MARCADOR = "marcadores.txt";
 
     public GestionArchivoMarcadores(Activity activity){
         this.activity = activity;
     }
 
-    public void agregarNota(Marcador marcador) throws IOException {
+    public void agregarMarcador(Marcador marcador) throws IOException {
         List <Marcador> marcadores = new ArrayList<Marcador>();
         marcadores = cargar();
         marcadores.add(marcador);
@@ -41,6 +41,11 @@ public class GestionArchivoMarcadores {
     public List<Marcador> leerMarcadores() throws IOException {
         List <Marcador> marcadores = new ArrayList<Marcador>();
         marcadores = cargar();
+
+        for (Marcador i: marcadores ){
+            Log.i("i" , i.getEquipoLocal());
+        }
+
         return marcadores;
     }
 
@@ -57,7 +62,7 @@ public class GestionArchivoMarcadores {
             objOutput.close();
             Toast.makeText(activity, "Archivo guardado correctamente", Toast.LENGTH_SHORT).show();
         }catch (IOException e){
-            Log.i("IOException",e.getCause().toString());
+            Log.i("IOException",e.getMessage());
         }
     }
 
@@ -70,10 +75,10 @@ public class GestionArchivoMarcadores {
             objInput.close();
 
         }catch (IOException e){
-            Log.i("IOException",e.getCause().toString());
+            Log.i("IOException", e.getMessage());
 
         }catch (ClassNotFoundException e){
-            Log.i("ClassNotFoundException",e.getCause().toString());
+            Log.i("ClassNotFoundException",e.getMessage());
         }
         return marcadorLista;
     }

@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.nextu.jj.examenfinalpersistencia.R;
+import com.nextu.jj.examenfinalpersistencia.bean.Marcador;
 
 /**
  * Created by JJ on 9/19/2017.
@@ -19,8 +20,8 @@ public class MarcadorViewHolder extends RecyclerView.ViewHolder {
         //txtNota = (TextView) itemView.findViewById(R.id.txt_Nota);
     }
 
-    public void bindMarcador(String nota){
-        txtNota.setText(nota);
+    public void bindMarcador(Marcador marcador){
+        //txtNota.setText(nota);
     }
 }
 

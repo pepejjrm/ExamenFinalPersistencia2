@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.nextu.jj.examenfinalpersistencia.bean.Marcador;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class DialogoAgregarMarcador extends DialogFragment {
     public static final String TAG = "d_agregar_marcador";
 
     interface OnAgregarMarcadorListener{
-        void onAgregarMarcador(String marcador);
+        void onAgregarMarcador(Marcador marcador);
     }
 
     private OnAgregarMarcadorListener listener;
@@ -56,15 +58,15 @@ public class DialogoAgregarMarcador extends DialogFragment {
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String local = editLocal.getX()x;
-                //String visitante = editVisitante.getText().toString();
-                String marcador1 = editMarcador1.getText().toString();
-                String marcador2 = editMarcador2.getText().toString();
-               /* if (!local.equals("") && !visitante.equals("") && !marcador1.equals("")
-                        && !marcador2.equals("")){
-                    listener.onAgregarMarcador("\n\n" + local + " VS " + visitante +
-                        "\nResultado: " + marcador1 + " - " + marcador2);
-                }*/
+                String local = "test";
+                String visitante = "test2";
+                int  marcador1 = Integer.parseInt(editMarcador1.getText().toString());
+                int  marcador2 = Integer.parseInt(editMarcador2.getText().toString());
+
+                Marcador marcador = new Marcador(local, visitante, marcador1, marcador2);
+
+                listener.onAgregarMarcador(marcador);
+
                 dismiss();
             }
         });

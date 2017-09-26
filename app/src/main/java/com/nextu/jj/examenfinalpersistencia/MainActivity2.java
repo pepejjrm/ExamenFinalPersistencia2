@@ -22,17 +22,23 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nextu.jj.examenfinalpersistencia.adaptador.RecyclerMarcadorAdapter;
+import com.nextu.jj.examenfinalpersistencia.archivos.GestionArchivoMarcadores;
 import com.nextu.jj.examenfinalpersistencia.archivos.GestionArchivoSesion;
+import com.nextu.jj.examenfinalpersistencia.bean.Marcador;
 import com.nextu.jj.examenfinalpersistencia.bean.Usuario;
 
+import java.io.IOException;
+
 public class MainActivity2 extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, DialogoAgregarMarcador.OnAgregarMarcadorListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     TabLayout tabLayout;
     Toolbar toolbar;
     CambiaPropiedades cambiaPropiedades = new CambiaPropiedades();
+    RecyclerMarcadorAdapter adapter;
 
     int colorPrimary ;
     int colorPrimaryDark;
@@ -66,7 +72,6 @@ public class MainActivity2 extends AppCompatActivity
         dialog.show(getSupportFragmentManager(), DialogoAgregarMarcador.TAG);
 
     }
-
 
    public void actualizaDatosHeader(){
 
@@ -261,6 +266,20 @@ public class MainActivity2 extends AppCompatActivity
             builder.setExitAnimations(this, android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             CustomTabsIntent customTabsIntent = builder.build();
             customTabsIntent.launchUrl(this, Uri.parse(url));
+        }
+    }
+
+    @Override
+    public void onAgregarMarcador(Marcador marcador) {
+       try {
+           GestionArchivoMarcadores gestionArchivoMarcadores = new GestionArchivoMarcadores(this);
+           gestionArchivoMarcadores.agregarMarcador(marcador);
+           adapter = new RecyclerMarcadorAdapter(this, gestionArchivoMarcadores.leerMarcadores());
+           //adapter.setMarcadores(gestionArchivoMarcadores.leerMarcadores());
+           adapter.notifyDataSetChanged();
+          // Toast.makeText(this, "Nota agregada con éxito", Toast.LENGTH_SHORT).show();
+       } catch (IOException e) {
+            Toast.makeText(this, "Error al guardar el archivo", Toast.LENGTH_SHORT).show();
         }
     }
 
